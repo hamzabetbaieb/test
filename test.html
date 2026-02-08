@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valentine 💖</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: white;
+      margin-top: 80px;
+    }
+
+    img {
+      width: 200px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 30px 0;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yesBtn {
+      background: #2ecc71;
+      color: white;
+    }
+
+    #noBtn {
+      background: #e74c3c;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="https://i.imgur.com/0y0y0y0.png" alt="bear" id="bearImg">
+
+  <h1>Will you be my Valentine? 💘</h1>
+
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    // Place No button randomly
+    noBtn.style.left = "55%";
+    noBtn.style.top = "65%";
+
+    // No button runs away 😂
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Yes button message 💖
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1>Yaaay 💖 I knew it 😍</h1>
+        <p style="font-size:25px;">Happy Valentine my love 🌹</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
